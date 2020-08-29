@@ -1,9 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".AddPostActivity">
+  <ImageButton
+      android:id="@+id/btn_voltar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/voltar"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+      android:background="@null"
+      android:layout_marginTop="10dp"
+
+      />
+
+  <ImageView
+
+      android:layout_width="135dp"
+      android:layout_height="59dp"
+      android:layout_centerHorizontal="true"
+      android:layout_gravity="center_horizontal"
+      android:layout_margin="@android:dimen/app_icon_size"
+      android:layout_marginTop="-5dp"
+      android:src="@drawable/isotipo"
+       />
+
+  <ImageView
+      android:id="@+id/pImageIV"
+      android:layout_width="239.64dp"
+      android:layout_height="160.62dp"
+      android:layout_gravity="center_horizontal"
+android:background="@drawable/caixa"
+      >
+
+  </ImageView>
+
+  <EditText
+      android:id="@+id/nome_animalET"
+      android:layout_width="242dp"
+      android:layout_height="45dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentTop="true"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/retangle"
+      android:hint="Nome do Pet"
+      android:inputType="text"
+      android:paddingStart="15sp"
+      android:textColor="@android:color/black"
+      android:textSize="14sp" />
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_marginTop="30dp"
+      android:layout_width="match_parent"
+android:gravity="center_vertical|center_horizontal"
+      android:layout_height="wrap_content">
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Animal:"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/caoRB"
+        android:text="Cão"
+        android:onClick="onRadioButtonClicked"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/gatoRB"
+        android:text="Gato"
+        android:onClick="onRadioButtonClicked"/>
+
+
+
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_marginTop="30dp"
+      android:layout_width="match_parent"
+      android:gravity="center_vertical|center_horizontal"
+      android:layout_height="wrap_content">
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexo:"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/femeaRB"
+        android:text="Fêmea"
+        android:onClick="onRadioButtonClicked"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/machoRB"
+        android:text="Macho"
+        android:onClick="onRadioButtonClicked"/>
+
+
+
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_marginTop="30dp"
+      android:layout_width="match_parent"
+      android:gravity="center_vertical|center_horizontal"
+      android:layout_height="wrap_content">
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cor do pelo:"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/claroRB"
+        android:text="Claro"
+        android:onClick="onRadioButtonClicked"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/escuroRB"
+        android:text="Escuro"
+        android:onClick="onRadioButtonClicked"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/mesticaRB"
+        android:text="Mestiça"
+        android:onClick="onRadioButtonClicked"/>
+
+
+
+  </LinearLayout>
+  <EditText
+      android:id="@+id/racalET"
+      android:layout_width="242dp"
+      android:layout_height="45dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentTop="true"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/retangle"
+      android:hint="Raça (se houver)"
+      android:inputType="text"
+      android:paddingStart="15sp"
+      android:textColor="@android:color/black"
+      android:textSize="14sp" />
+
+</LinearLayout>

@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/postbtn"
         android:src="@drawable/camera"
-        
+        android:onClick="proximaTela"
+
 />
 
 
