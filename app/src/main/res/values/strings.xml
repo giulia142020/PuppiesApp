@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">PuppiesApp</string>
+  <string name="caoRb">Cão</string>
+    <string name="gatoRb">Gato</string>
+    <string name="femeaRb">Fêmea</string>
+    <string name="machoRb">Macho</string>
+    <string name="claroRb">Claro</string>
+    <string name="escuroRb">Escuro</string>
+    <string name="mesticaRb">Mestiça</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

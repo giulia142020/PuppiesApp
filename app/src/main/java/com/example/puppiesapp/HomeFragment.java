@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -67,13 +70,31 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        final View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        Button btn = view.findViewById(R.id.postbtn);
 
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        /*
+         * Define a ação do Botão, é o mesmo que você está fazendo através do
+         * onClick no XML.
+         */
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentActivity act = getActivity();
 
+                if (act != null) {
+                    startActivity(new Intent(act, AddPostActivity.class));
+                }
+            }
+        });
+
+        return view;
 
     }
+
+
+
 
 
 }

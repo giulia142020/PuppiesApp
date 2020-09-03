@@ -25,17 +25,15 @@
       android:layout_centerHorizontal="true"
       android:layout_gravity="center_horizontal"
       android:layout_margin="@android:dimen/app_icon_size"
-      android:layout_marginTop="-5dp"
-      android:src="@drawable/isotipo"
-       />
+
+      android:src="@drawable/isotipo" />
 
   <ImageView
       android:id="@+id/pImageIV"
       android:layout_width="239.64dp"
       android:layout_height="160.62dp"
       android:layout_gravity="center_horizontal"
-android:background="@drawable/caixa"
-      >
+      android:background="@drawable/caixa">
 
   </ImageView>
 
@@ -43,8 +41,7 @@ android:background="@drawable/caixa"
       android:id="@+id/nome_animalET"
       android:layout_width="242dp"
       android:layout_height="45dp"
-      android:layout_alignParentLeft="true"
-      android:layout_alignParentTop="true"
+
       android:layout_gravity="center_horizontal"
       android:layout_marginTop="10dp"
       android:background="@drawable/retangle"
@@ -68,16 +65,14 @@ android:gravity="center_vertical|center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/caoRB"
-        android:text="Cão"
-        android:onClick="onRadioButtonClicked"/>
-
+        android:text="@string/caoRb"
+/>
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/gatoRB"
-        android:text="Gato"
-        android:onClick="onRadioButtonClicked"/>
-
+        android:text="@string/gatoRb"
+/>
 
 
   </LinearLayout>
@@ -96,15 +91,14 @@ android:gravity="center_vertical|center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/femeaRB"
-        android:text="Fêmea"
-        android:onClick="onRadioButtonClicked"/>
-
+        android:text="@string/femeaRb"
+/>
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/machoRB"
-        android:text="Macho"
-        android:onClick="onRadioButtonClicked"/>
+        android:text="@string/machoRb"
+        />
 
 
 
@@ -124,27 +118,27 @@ android:gravity="center_vertical|center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/claroRB"
-        android:text="Claro"
-        android:onClick="onRadioButtonClicked"/>
+        android:text="@string/claroRb"
+     />
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/escuroRB"
-        android:text="Escuro"
-        android:onClick="onRadioButtonClicked"/>
+        android:text="@string/escuroRb"
+       />
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/mesticaRB"
-        android:text="Mestiça"
-        android:onClick="onRadioButtonClicked"/>
+        android:text="@string/mesticaRb"
+       />
 
 
 
   </LinearLayout>
   <EditText
-      android:id="@+id/racalET"
+      android:id="@+id/racaET"
       android:layout_width="242dp"
       android:layout_height="45dp"
       android:layout_alignParentLeft="true"
@@ -158,4 +152,14 @@ android:gravity="center_vertical|center_horizontal"
       android:textColor="@android:color/black"
       android:textSize="14sp" />
 
+  <Button
+      android:id="@+id/btn_postar"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginTop="10dp"
+android:layout_gravity="end"
+      android:background="@color/colorPrimary"
+
+
+      />
 </LinearLayout>

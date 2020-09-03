@@ -13,14 +13,20 @@
         android:textSize="30sp"
         android:gravity="center"
         android:text="Home" />
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+          <Button
+              android:id="@+id/postbtn"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="publicar foto"
+             />
+   <!-- <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/postbtn"
         android:src="@drawable/camera"
         android:onClick="proximaTela"
 
-/>
+/> -->
 
 
 </FrameLayout>
