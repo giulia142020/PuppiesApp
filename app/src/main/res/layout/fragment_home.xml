@@ -6,19 +6,24 @@
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postsRecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:text="Home" />
+        />
           <Button
               android:id="@+id/postbtn"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="publicar foto"
+              android:layout_gravity="bottom|end"
+            android:background="@drawable/button1"
+              android:text="foto"
+
+
              />
+
    <!-- <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

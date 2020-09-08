@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -158,8 +162,9 @@ android:gravity="center_vertical|center_horizontal"
       android:layout_height="100dp"
       android:layout_marginTop="10dp"
 android:layout_gravity="end"
-      android:background="@color/colorPrimary"
+      android:background="@drawable/ic_prosseguir"
 
 
       />
 </LinearLayout>
+</ScrollView>

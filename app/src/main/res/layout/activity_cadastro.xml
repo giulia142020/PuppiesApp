@@ -39,11 +39,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cadastro"
+        android:fontFamily="@font/comfortaa"
         android:textSize="22dp"
         android:paddingTop="40dp"
         android:paddingBottom="30dp"
         android:textColor="@android:color/black"
-        android:fontFamily="sans-serif-condensed-light"
         android:layout_gravity="center_horizontal"/>
 
     <EditText

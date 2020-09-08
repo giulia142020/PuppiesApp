@@ -3,17 +3,33 @@ package com.example.puppiesapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.puppiesapp.adapters.AdapterPosts;
+import com.example.puppiesapp.models.ModelPost;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,9 +37,11 @@ import com.google.android.material.snackbar.Snackbar;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+    FirebaseAuth firebaseAuth;
+ RecyclerView recyclerView;
+ List<ModelPost> postList;
+ AdapterPosts adapterPosts;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     FloatingActionButton fab;
@@ -37,15 +55,6 @@ public class HomeFragment extends Fragment {
 
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static HomeFragment newInstance(String param1, String param2) {
         HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
@@ -71,13 +80,21 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
-
+            firebaseAuth = FirebaseAuth.getInstance();
         Button btn = view.findViewById(R.id.postbtn);
 
-        /*
-         * Define a ação do Botão, é o mesmo que você está fazendo através do
-         * onClick no XML.
-         */
+        recyclerView = view.findViewById(R.id.postsRecyclerview);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+
+        layoutManager.setStackFromEnd(true);
+        layoutManager.setReverseLayout(true);
+
+        recyclerView.setLayoutManager(layoutManager);
+        
+        postList = new ArrayList<>();
+        
+        loadPosts();
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,9 +109,31 @@ public class HomeFragment extends Fragment {
         return view;
 
     }
+    private void loadPosts() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Posts");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+               postList.clear();
+               for(DataSnapshot ds: snapshot.getChildren()){
+                   ModelPost modelPost = ds.getValue(ModelPost.class);
+                   postList.add(modelPost);
+                   
+                   adapterPosts = new AdapterPosts(getActivity(),postList);
+                   recyclerView.setAdapter(adapterPosts);
+               }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getActivity(), ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
 
 
 
 
 }
+

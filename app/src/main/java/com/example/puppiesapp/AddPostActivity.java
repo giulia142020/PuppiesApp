@@ -103,7 +103,7 @@ public class AddPostActivity extends AppCompatActivity {
         claroRb = findViewById(R.id.claroRB);
         escuroRb = findViewById(R.id.escuroRB);
         mesticoRb = findViewById(R.id.mesticaRB);
-        uploadBtn = findViewById(R.id.postbtn);
+        uploadBtn = findViewById(R.id.btn_postar);
         pimageIv = findViewById(R.id.pImageIV);
 
         pimageIv.setOnClickListener(new View.OnClickListener() {
@@ -219,7 +219,7 @@ public class AddPostActivity extends AppCompatActivity {
                hashMap.put("uDp",dp);
                hashMap.put("pId",timeStamp);
                hashMap.put("pNome_do_animal",nome_do_animal);
-               hashMap.put("uRaca",raca);
+               hashMap.put("pRaca",raca);
                hashMap.put("pImage","noImage");
                hashMap.put("pTime",timeStamp);
 
