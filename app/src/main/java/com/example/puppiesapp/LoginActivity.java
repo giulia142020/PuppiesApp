@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Patterns;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,19 +81,31 @@ Button mbtn_Logar;
 
     private void showEsqueceuSenha() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Recupere sua Senha");
-        LinearLayout linearLayout = new LinearLayout(this);
 
-       final EditText emailEt = new EditText(this);
+        //builder.setTitle("Recupere sua Senha");
+       // LinearLayout linearLayout = new LinearLayout(this);
+       View mView = getLayoutInflater().inflate(R.layout.dialog,null);
+
+
+       final EditText emailEt = (EditText) mView.findViewById(R.id.dEmailEt) ;
+       Button btnConfirma = (Button) mView.findViewById(R.id.recuperarSenhaBtn);
        emailEt.setHint("Email");
        emailEt.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
 
        emailEt.setMinEms(16);
 
-       linearLayout.addView(emailEt);
-       linearLayout.setPadding(10,10,10,10);
-       builder.setView(linearLayout);
-       builder.setPositiveButton("Recuperar", new DialogInterface.OnClickListener() {
+       //linearLayout.addView(emailEt);
+       //linearLayout.setPadding(10,10,10,10);
+
+        btnConfirma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = emailEt.getText().toString().trim();
+                beginRecuperar(email);
+            }
+        });
+       builder.setView(mView);
+       /*builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
            @Override
            public void onClick(DialogInterface dialog, int which) {
             String email = emailEt.getText().toString().trim();
@@ -106,7 +119,7 @@ Button mbtn_Logar;
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
-        });
+        });*/
 
 
         builder.create().show();
@@ -158,6 +171,7 @@ Button mbtn_Logar;
                                   hashMap.put("email", email);
                                   hashMap.put("uidemail", uid);
                                   hashMap.put("name", "");
+                                  hashMap.put("onlineStatus","online");
                                   hashMap.put("phone", "");
                                   hashMap.put("image", "");
                                   hashMap.put("tipo_de_user","");

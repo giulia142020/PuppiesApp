@@ -9,6 +9,8 @@
     tools:context=".DashboardActivity">
    <include
        layout="@layout/appbar"
+
+
        />
 
 

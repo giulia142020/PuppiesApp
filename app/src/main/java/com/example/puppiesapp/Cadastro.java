@@ -100,6 +100,7 @@ public class Cadastro extends AppCompatActivity {
                     hashMap.put("email", email);
                     hashMap.put("uidemail", uid);
                     hashMap.put("name",name);
+                    hashMap.put("onlineStatus","online");
                     hashMap.put("phone", phone);
                     hashMap.put("image","" );
                     hashMap.put("tipo_de_user", tipodeuser);

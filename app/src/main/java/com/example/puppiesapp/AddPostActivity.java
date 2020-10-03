@@ -20,9 +20,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -57,9 +59,11 @@ public class AddPostActivity extends AppCompatActivity {
     String[]  storagePermissions;
 
     EditText nome_do_animalEt, racaEt;
+    RadioGroup radioGrouptipo,radioGroupsexo, radioGroupcor;
     RadioButton caoRb, gatoRb, femeaRb, machoRb, claroRb, escuroRb, mesticoRb;
-    Button uploadBtn;
+    ImageButton uploadBtn;
     ImageView pimageIv;
+    ImageButton voltarbtn;
 
     String name , email, uid, dp;
     Uri image_uri = null;
@@ -96,6 +100,10 @@ public class AddPostActivity extends AppCompatActivity {
           });
         nome_do_animalEt = findViewById(R.id.nome_animalET);
         racaEt = findViewById(R.id.racaET);
+        radioGrouptipo = findViewById(R.id.radioGrouptipo);
+        radioGroupcor = findViewById(R.id.radioGroupcor);
+        radioGroupsexo = findViewById(R.id.radioGroupsexo);
+
         caoRb = findViewById(R.id.caoRB);
         gatoRb = findViewById(R.id.gatoRB);
         femeaRb = findViewById(R.id.femeaRB);
@@ -105,6 +113,7 @@ public class AddPostActivity extends AppCompatActivity {
         mesticoRb = findViewById(R.id.mesticaRB);
         uploadBtn = findViewById(R.id.btn_postar);
         pimageIv = findViewById(R.id.pImageIV);
+        voltarbtn = findViewById(R.id.pbtn_voltar);
 
         pimageIv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,18 +122,27 @@ public class AddPostActivity extends AppCompatActivity {
             }
         });
 
+voltarbtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(AddPostActivity.this, DashboardActivity.class));
+        finish();
+    }
+});
+
 
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nome_do_animal = nome_do_animalEt.getText().toString().trim();
                 String raca = racaEt.getText().toString().trim();
+               
                 if(TextUtils.isEmpty(nome_do_animal)){
                     Toast.makeText(AddPostActivity.this, "Enter nome ...", Toast.LENGTH_SHORT).show();
                     return ;
                 }
                 if(TextUtils.isEmpty(raca)){
-                    Toast.makeText(AddPostActivity.this, "Inserindo raça ...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPostActivity.this, "Inserir raça ...", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(image_uri==null)
@@ -132,6 +150,7 @@ public class AddPostActivity extends AppCompatActivity {
                     uploadData(nome_do_animal,raca,"noImage");
                 }else{
                     uploadData(nome_do_animal,raca,String.valueOf(image_uri));
+
 
                 }
 
@@ -180,6 +199,8 @@ public class AddPostActivity extends AppCompatActivity {
                                            racaEt.setText("");
                                            pimageIv.setImageURI(null);
                                            image_uri = null;
+                                           startActivity(new Intent(AddPostActivity.this, DashboardActivity.class));
+                                           finish();
                                        }
                                    })
                                    .addOnFailureListener(new OnFailureListener() {
@@ -230,10 +251,14 @@ public class AddPostActivity extends AppCompatActivity {
                            public void onSuccess(Void aVoid) {
                                pd.dismiss();
                                Toast.makeText(AddPostActivity.this, "Post publicado", Toast.LENGTH_SHORT).show();
+
                                nome_do_animalEt.setText("");
                                racaEt.setText("");
                                pimageIv.setImageURI(null);
                                image_uri = null;
+
+                               startActivity(new Intent(AddPostActivity.this, DashboardActivity.class));
+                               finish();
                            }
                        })
                        .addOnFailureListener(new OnFailureListener() {
@@ -401,4 +426,6 @@ public class AddPostActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+
 }

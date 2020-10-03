@@ -1,6 +1,9 @@
 package com.example.puppiesapp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.puppiesapp.adapters.AdapterPosts;
@@ -41,10 +45,11 @@ public class HomeFragment extends Fragment {
  RecyclerView recyclerView;
  List<ModelPost> postList;
  AdapterPosts adapterPosts;
+    FloatingActionButton fab;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    FloatingActionButton fab;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -81,7 +86,8 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
             firebaseAuth = FirebaseAuth.getInstance();
-        Button btn = view.findViewById(R.id.postbtn);
+        fab = view.findViewById(R.id.hfab);
+
 
         recyclerView = view.findViewById(R.id.postsRecyclerview);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -95,22 +101,23 @@ public class HomeFragment extends Fragment {
         
         loadPosts();
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentActivity act = getActivity();
+        
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FragmentActivity act = getActivity();
 
-                if (act != null) {
-                    startActivity(new Intent(act, AddPostActivity.class));
-                }
-            }
-        });
-
+                        if (act != null) {
+                            startActivity(new Intent(act, AddPostActivity.class));
+                        }
+                    }
+                });
         return view;
 
     }
     private void loadPosts() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Posts");
+
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -126,10 +133,21 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getActivity(), ""+error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+    private void checkUserStatus(){
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user != null){
+
+        }else{
+            startActivity(new Intent(getActivity(),MainActivity.class));
+            getActivity().finish();
+        }
+    }
+
 
 
 

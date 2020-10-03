@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PuppiesApp</string>
-  <string name="caoRb">Cão</string>
+    <string name="caoRb">Cão</string>
     <string name="gatoRb">Gato</string>
     <string name="femeaRb">Fêmea</string>
     <string name="machoRb">Macho</string>

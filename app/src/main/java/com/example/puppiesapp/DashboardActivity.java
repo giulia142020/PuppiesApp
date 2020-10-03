@@ -28,13 +28,13 @@ public class DashboardActivity extends AppCompatActivity {
         toolbar= findViewById(R.id.myToolBar);
         setSupportActionBar(toolbar);
 actionBar = getSupportActionBar();
-actionBar.setTitle("Perfil");
+actionBar.setTitle("");
      firebaseAuth = FirebaseAuth.getInstance();
 
         BottomNavigationView navigationView = findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(selectedListener);
 
-        actionBar.setTitle("Home");
+       // actionBar.setTitle("Perfil");
         HomeFragment fragment1 = new HomeFragment();
         FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
         ft1.replace(R.id.content,fragment1,"");
@@ -47,22 +47,26 @@ actionBar.setTitle("Perfil");
              public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                  switch (item.getItemId()){
+
+
                      case R.id.nav_home:
-                         actionBar.setTitle("Home");
+                        // actionBar.setTitle("Home");
                          HomeFragment fragment1 = new HomeFragment();
                          FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
                          ft1.replace(R.id.content,fragment1,"");
                          ft1.commit();
-                     return true;
+                         return true;
                      case R.id.nav_perfil:
-                         actionBar.setTitle("Perfil");
+                         //actionBar.setTitle("Perfil");
                          PerfilFragment fragment2 = new PerfilFragment();
                          FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
                          ft2.replace(R.id.content,fragment2,"");
                          ft2.commit();
                          return true;
+
+
                      case R.id.nav_chat:
-                         actionBar.setTitle("Chat");
+                         //actionBar.setTitle("Chat");
                          ChatFragment fragment3 = new ChatFragment();
                          FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
                          ft3.replace(R.id.content,fragment3,"");

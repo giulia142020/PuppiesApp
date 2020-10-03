@@ -8,6 +8,7 @@
     android:icon="@drawable/ic_home"/>
 
     <item android:id="@+id/nav_chat"
-        android:title="Chat"
-        android:icon="@drawable/ic_chat_black"/>
+        android:title="Chats"
+        android:icon="@drawable/ic_chat_black"
+        />
 </menu>

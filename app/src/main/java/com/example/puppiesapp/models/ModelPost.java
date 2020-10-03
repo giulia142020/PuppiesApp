@@ -1,15 +1,15 @@
 package com.example.puppiesapp.models;
 
 public class ModelPost {
-String pId, pNome_do_Animal, pRaca, pImage, pTime, uid, uEmail, uDp, uName ;
+String pId, pNome_do_animal, uRaca, pImage, pTime, uid, uEmail, uDp, uName ;
 
 public ModelPost(){
 
 }
-public ModelPost(String pId, String pNome_do_Animal, String pRaca, String pImage, String pTime, String uid , String uEmail, String uDp, String uName){
+public ModelPost(String pId, String pNome_do_animal, String uRaca, String pImage, String pTime, String uid , String uEmail, String uDp, String uName){
     this.pId = pId;
-    this.pNome_do_Animal = pNome_do_Animal;
-    this.pRaca = pRaca;
+    this.pNome_do_animal = pNome_do_animal;
+    this.uRaca = uRaca;
     this.pImage = pImage;
     this.pTime = pTime;
     this.uid = uid;
@@ -27,20 +27,20 @@ public ModelPost(String pId, String pNome_do_Animal, String pRaca, String pImage
         this.pId = pId;
     }
 
-    public String getpNome_do_Animal() {
-        return pNome_do_Animal;
+    public String getpNome_do_animal() {
+        return pNome_do_animal;
     }
 
-    public void setpNome_do_Animal(String pNome_do_Animal) {
-        this.pNome_do_Animal = pNome_do_Animal;
+    public void setpNome_do_animal(String pNome_do_animal) {
+        this.pNome_do_animal = pNome_do_animal;
     }
 
-    public String getpRaca() {
-        return pRaca;
+    public String getuRaca() {
+        return uRaca;
     }
 
-    public void setpRaca(String pRaca) {
-        this.pRaca = pRaca;
+    public void setuRaca(String uRaca) {
+        this.uRaca = uRaca;
     }
 
     public String getpImage() {
