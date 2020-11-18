@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ReportActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/btn_voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/voltar"
+            android:background="@null"
+
+            android:onClick="Voltar"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Denuncie os maus-tratos a animais"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/comfortaa"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            android:layout_gravity="center_horizontal"
+            app:contentPadding="5dp"
+
+            app:cardUseCompatPadding="true"
+            app:cardBackgroundColor="#B3EEF6">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#000"
+                android:text="1.Batalhão Policiamento Ambiental"
+                android:textSize="19dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textSize="10dp"
+                    android:text="R. Álvaro Maia, 74 - Alvorada, Manaus - AM, 69055-660"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bpam" />
+
+                <ImageButton
+
+                android:id="@+id/batalhao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="intencao"
+                android:layout_margin="10dp"
+android:layout_gravity="center"
+                android:src="@drawable/ic_call"
+                android:background="@drawable/ligar"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:layout_gravity="center_horizontal"
+        app:contentPadding="5dp"
+
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#B3EEF6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#000"
+                android:text="2.Centro de Controle de Zoonoses"
+                android:textSize="19dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="10dp"
+                android:text="Av. Brasil, S/N - Compensa, Manaus - AM, 69036-971"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ccz"/>
+            <ImageButton
+
+                android:id="@+id/ccz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="intencao"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_call"
+                android:background="@drawable/ligar"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:layout_gravity="center_horizontal"
+        app:contentPadding="5dp"
+
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#B3EEF6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#000"
+                android:text="3.Delegacia Esp. de Meio Ambiente"
+
+                android:textSize="19dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="10dp"
+                android:text="R. Violeta, 35 - Tancredo Neves, Manaus - AM, 69087-241"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dema"/>
+            <ImageButton
+
+                android:id="@+id/delegacia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="intencao"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_call"
+                android:background="@drawable/ligar"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:layout_gravity="center_horizontal"
+        app:contentPadding="5dp"
+
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#B3EEF6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#000"
+                android:text="4.Secretaria Municipal do Meio Ambiente"
+
+                android:textSize="19dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="10dp"
+                android:text="Rua do Rubidio, 288 - Vila da Prata, Manaus - AM, 69030-530"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/sema"/>
+            <ImageButton
+
+                android:id="@+id/semmas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="intencao"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_call"
+                android:background="@drawable/ligar"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:layout_gravity="center_horizontal"
+        app:contentPadding="5dp"
+
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#B3EEF6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="#000"
+                android:text="5.IBAMA"
+
+                android:textSize="19dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="10dp"
+                android:text="Rua Ministro João Gonçalves de Souza, s/nº, Km 01, BR-319, Distrito Industrial, Cep: 69075-830, Manaus/AM"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ibama"/>
+            <ImageButton
+
+                android:id="@+id/ibama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="intencao"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_call"
+                android:background="@drawable/ligar"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+</LinearLayout>
+</ScrollView>

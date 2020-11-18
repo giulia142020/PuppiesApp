@@ -2,11 +2,12 @@ package com.example.puppiesapp.models;
 
 public class ModelPost {
 String pId, pNome_do_animal, uRaca, pImage, pTime, uid, uEmail, uDp, uName ;
+String pTags;
 
 public ModelPost(){
 
 }
-public ModelPost(String pId, String pNome_do_animal, String uRaca, String pImage, String pTime, String uid , String uEmail, String uDp, String uName){
+public ModelPost(String pId, String pNome_do_animal, String uRaca, String pImage, String pTime, String uid , String uEmail, String uDp, String uName, String pTags){
     this.pId = pId;
     this.pNome_do_animal = pNome_do_animal;
     this.uRaca = uRaca;
@@ -16,8 +17,17 @@ public ModelPost(String pId, String pNome_do_animal, String uRaca, String pImage
     this.uEmail = uEmail;
     this.uDp= uDp;
     this.uName = uName;
+    this.pTags = pTags;
 
 }
+
+    public String getpTags() {
+        return pTags;
+    }
+
+    public void setpTags(String pTags) {
+        this.pTags = pTags;
+    }
 
     public String getpId() {
         return pId;

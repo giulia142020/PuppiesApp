@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="3dp"
+    android:layout_gravity="center_horizontal|center_vertical"
+    app:contentPadding="5dp"
+    app:cardBackgroundColor="#4962E1"
+    app:cardUseCompatPadding="true"
+   >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:background="#4962E1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/profileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/uPictureIv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_foreground" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/uNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="Name"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/pTimeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="33 min"
+                    android:textColor="#fff" />
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/morebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/ic_morew" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Procura-se"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:fontFamily="sans-serif-light"/>
+
+        <TextView
+            android:id="@+id/pNome_animalTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="animal"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:autoLink="all"
+            android:textColor="#67DBFA"
+            android:fontFamily="@font/comfortaa"
+
+            android:textSize="23sp"/>
+
+        <ImageView
+            android:id="@+id/pImageIV"
+            android:layout_width="195dp"
+            android:layout_height="207dp"
+            android:layout_gravity="center" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/circle_online" />
+
+            <TextView
+                android:id="@+id/pRacaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:fontFamily="@font/comfortaa"
+
+                android:text="Raça:"
+                   android:textColor="#fff"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/circle_online"/>
+            <TextView
+                android:id="@+id/pTipoTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo:"
+                android:autoLink="all"
+                android:textColor="#fff"
+
+                android:fontFamily="@font/comfortaa"
+
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/circle_online"/>
+            <TextView
+                android:id="@+id/pSexoTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sexo: "
+                android:autoLink="all"
+                android:textColor="#fff"
+
+                android:fontFamily="@font/comfortaa"
+
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/circle_online"/>
+            <TextView
+                android:id="@+id/pCorTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cor: "
+                android:autoLink="all"
+                android:textColor="#fff"
+
+                android:fontFamily="@font/comfortaa"
+
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/circle_online"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informações Extras: "
+                android:autoLink="all"
+                android:textColor="#fff"
+
+                android:fontFamily="@font/comfortaa"
+
+                android:textSize="15sp"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+        <TextView
+            android:id="@+id/infoextraEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#fff"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+
+            android:layout_marginBottom="10sp"
+
+            android:text="is é disculpa de bebadis, arcu quam euismod magna. Delegadis gente fi"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:text="Encontrei seu pet!"
+            android:fontFamily="@font/comfortaa"
+            android:id="@+id/encontreiBtn"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button4"/>/>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -28,8 +28,9 @@ android:background="#fff"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:src="@drawable/voltar"
+                 android:layout_marginStart="10dp"
                  android:background="@null"
-                 android:layout_marginLeft="10dp"
+                  android:layout_gravity="center_vertical"
 
 
 
@@ -40,7 +41,9 @@ android:background="#fff"
                  android:layout_height="wrap_content"
                  android:fontFamily="@font/playlist"
                  android:text="Puppies"
-                      android:layout_marginLeft="128dp"
+                   android:textAlignment="center"
+
+                      android:layout_marginLeft="120dp"
                     android:textColor="#0F6EA7"
                  android:textSize="30dp"
 
@@ -78,7 +81,8 @@ android:background="#fff"
                 android:textSize="15sp"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_posts"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
                 android:layout_height="match_parent"/>
 
         </LinearLayout>

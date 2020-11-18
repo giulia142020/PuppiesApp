@@ -5,19 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/postaradd"
+android:gravity="center"
     tools:context=".AboutUsActivity">
-    <Switch
-        android:id="@+id/switch1"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comfortaa"
+         android:textColor="#000"
+        android:layout_margin="10dp"
+        android:text="Somos alunos da fundação Matias Machline e formandos do ensino médio e técnico da instituição.Este aplicativo faz parte do nosso Trabalho de Conclusão de Curso técnico e busca contribuir com a siociedade e com os animais domésticos"/>
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:switchMinWidth="56dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="120dp"
-        android:text="Notificações:"
-        android:layout_gravity="end"
-        android:checked="true"
-        android:textOff="OFF"
-        android:textOn="ON"/>
+        android:src="@drawable/logo"/>
 
 </LinearLayout>

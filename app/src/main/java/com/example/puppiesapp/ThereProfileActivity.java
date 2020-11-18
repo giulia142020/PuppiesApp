@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +38,7 @@ public class ThereProfileActivity extends AppCompatActivity {
 
     ImageView avatarTv,coverIv;
     TextView userTv, emailTv,tipouserTv,phoneTv;
+    ImageButton voltar ;
 
     RecyclerView postsRecyclerView;
 
@@ -53,7 +56,15 @@ public class ThereProfileActivity extends AppCompatActivity {
         userTv = findViewById(R.id.userTv);
         tipouserTv =findViewById(R.id.tipouserTv);
         postsRecyclerView = findViewById(R.id.recyclerview_posts);
+        voltar = findViewById(R.id.btn_voltar);
 
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ThereProfileActivity.this, DashboardActivity.class));
+                finish();
+            }
+        });
         firebaseAuth = FirebaseAuth.getInstance();
 
         Intent intent = getIntent();

@@ -8,6 +8,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:background="@drawable/retangle"
+
+        android:padding="5dp"
         android:layout_height="wrap_content">
 
         <com.blogspot.atifsoftwares.circularimageview.CircularImageView
@@ -41,6 +43,7 @@
             android:layout_toEndOf="@+id/profileIv"
             android:layout_toRightOf="@+id/profileIv"
             android:layout_below="@+id/nameTv"
+
             />
 
 

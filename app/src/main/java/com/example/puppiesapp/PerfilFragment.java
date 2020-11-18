@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,13 +27,16 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.puppiesapp.adapters.AdapterLost;
 import com.example.puppiesapp.adapters.AdapterPosts;
+import com.example.puppiesapp.models.ModelLost;
 import com.example.puppiesapp.models.ModelPost;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -75,8 +79,9 @@ public class PerfilFragment extends Fragment {
 
    ImageView avatarTv,coverIv;
    TextView userTv, emailTv,tipouserTv,phoneTv;
-   FloatingActionButton fab;
+   FloatingActionButton fab,fab_denuncia;
    RecyclerView postsRecyclerView;
+   Button btnAdotar;
 
 ProgressDialog pd;
 
@@ -91,7 +96,9 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
     String storagePermissions[];
 
     List<ModelPost> postList;
+    List<ModelLost> postListLost;
     AdapterPosts adapterPosts;
+    AdapterLost adapterLost;
     String uid;
 
 
@@ -156,12 +163,23 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
         userTv = view.findViewById(R.id.userTv);
         tipouserTv = view.findViewById(R.id.tipouserTv);
          fab = view.findViewById(R.id.fab);
+         fab_denuncia= view.findViewById(R.id.fabdenuncia);
+         btnAdotar = view.findViewById(R.id.quero_adotarBtn);
         postsRecyclerView = view.findViewById(R.id.recyclerview_posts);
 
 
         pd = new ProgressDialog(getActivity());
+        fab_denuncia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentActivity act = getActivity();
 
-        Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
+                if (act != null) {
+                    startActivity(new Intent(act, ReportActivity.class));
+                }
+            }
+        });
+      Query query = databaseReference.orderByChild("email").equalTo(user.getEmail());
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -216,8 +234,10 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
         postsRecyclerView.setLayoutManager(layoutManager);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Posts");
+       
 
         Query query = ref.orderByChild("uid").equalTo(uid);
+
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -232,6 +252,7 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
                     
                     postsRecyclerView.setAdapter(adapterPosts);
                 }
+
             }
 
             @Override
@@ -239,6 +260,8 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
                 //Toast.makeText(getActivity(), ""+error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
 
 
@@ -302,12 +325,12 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
 
     private void showNameDescriUpdateDialog(final String key) {
      AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-     builder.setTitle("Atualizar"+key);
+     builder.setTitle("Atualizar  "+key);
         LinearLayout linearLayout = new LinearLayout(getActivity());
         linearLayout.setOrientation(LinearLayout.VERTICAL);
         linearLayout.setPadding(10,10,10,10);
         final EditText editText = new EditText(getActivity());
-        editText.setHint("Enter"+key);
+        editText.setHint(" "+key);
         linearLayout.addView(editText);
 
 
@@ -357,7 +380,6 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
                                    }
 
 
-
                          }else{
                              Toast.makeText(getActivity(), "Por favor insira"+key, Toast.LENGTH_SHORT).show();
 
@@ -373,6 +395,7 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
         });
 
         builder.create().show();
+
 
     }
 
@@ -453,6 +476,7 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
                 image_uri = data.getData();
 
                  uploadProfileCoverPhoto(image_uri);
+
             }
             else if (requestCode == IMAGE_PICK_CAMERA_CODE){
                 uploadProfileCoverPhoto(image_uri);
@@ -496,6 +520,8 @@ private  static  final int CAMERA_REQUEST_CODE = 100;
                                     public void onSuccess(Void aVoid) {
                                      pd.dismiss();
                                         Toast.makeText(getActivity(), "Image Atualizada", Toast.LENGTH_SHORT).show();
+
+
 
                                     }
                                 })

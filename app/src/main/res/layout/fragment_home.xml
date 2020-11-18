@@ -3,30 +3,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3EEEE"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_lost"
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/layoutfilter"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/filterBtn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_filter"
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/chipfalso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="femea"
+        android:layout_margin="5dp"
+        android:textColor="#fff"
+android:textAlignment="center"
+        android:fontFamily="@font/comfortaa"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/button5"
+        />
+    <TextView
+        android:id="@+id/chipfalso2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="femea"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:fontFamily="@font/comfortaa"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button5"
+        />
+    <TextView
+        android:id="@+id/chipfalso3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="femea"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/comfortaa"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/button5"
+        />
 
 
 
-            <ImageView
-                  android:id="@+id/filterBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_filter"
-                android:layout_margin="20dp"
-                android:textSize="30sp"/>
+
+
+
+</LinearLayout>
+
 
 
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/postsRecyclerview"
-            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/filterBtn"
+            android:layout_below="@+id/layoutfilter"
 
 
             />
@@ -42,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/hfab"
-        android:src="@drawable/camera"
+        android:src="@drawable/ic_post"
         android:backgroundTint="@color/colorPrimary"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"

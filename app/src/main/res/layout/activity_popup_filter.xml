@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_shape"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/comfortaa"
+        android:gravity="center_horizontal"
+        android:text="Deixe desmarcado para ver todos!" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:text="Sexo:" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupsexoFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/femeaRBFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+
+
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/femeaRb" />
+
+                <RadioButton
+                    android:id="@+id/machoRBFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/machoRb" />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/comfortaa"
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:text="Espécie:" />
+
+            <RadioGroup
+                android:id="@+id/radioGrouptipoFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/caoRBFilter"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/caoRb" />
+
+                <RadioButton
+                    android:id="@+id/gatoRBFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:fontFamily="@font/comfortaa"
+
+                    android:text="@string/gatoRb" />
+
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Cor do pelo:"
+            android:textSize="20dp"
+            android:textColor="#fff"
+            android:fontFamily="@font/comfortaa"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupcorFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/claroRBFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/colorPrimary"
+                android:fontFamily="@font/comfortaa"
+
+                android:text="@string/claroRb" />
+
+            <RadioButton
+                android:id="@+id/escuroRBFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/colorPrimary"
+
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/escuroRb" />
+
+            <RadioButton
+                android:id="@+id/mesticaRBFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/colorPrimary"
+
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/mesticaRb" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnOkFilter"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button4"
+        android:fontFamily="@font/comfortaa"
+        android:padding="3dp"
+        android:text="OK"
+        />
+</LinearLayout>

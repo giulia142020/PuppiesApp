@@ -11,9 +11,18 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/colorAccent"
+        android:background="#86F1FF"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
+        <ImageButton
+            android:id="@+id/btn_voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/voltar"
+            android:background="@null"
+             android:layout_margin="5dp"
+
+            />
       <com.blogspot.atifsoftwares.circularimageview.CircularImageView
          android:id="@+id/profileIv"
           android:layout_width="35dp"
@@ -31,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="nome"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:textSize="18sp"
         android:fontFamily="@font/comfortaa"/>
     <TextView
@@ -39,9 +48,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="online"
-        android:textColor="#ffffff"
+        android:textColor="#000"
         android:textSize="10dp"
-        android:fontFamily="@font/comfortaa"/>
+        android:fontFamily="sans-serif-light"/>
 </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -61,6 +70,7 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:background="#ffff"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         >
         <EditText
@@ -68,7 +78,7 @@
             android:layout_weight="1"
             android:background="@drawable/button1"
             android:hint="Digite aqui..."
-            android:padding="15dp"
+            android:padding="10dp"
             android:inputType="textCapSentences|textMultiLine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

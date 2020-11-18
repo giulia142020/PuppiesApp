@@ -26,7 +26,6 @@ android:background="@drawable/postaradd"
                android:layout_width="80dp"
                android:layout_marginTop="30dp"
                android:layout_height="80dp"
-               android:background="@drawable/button1"
                android:src="@drawable/ic_addphoto"
                android:padding="5dp"
                />
@@ -51,24 +50,42 @@ android:background="@drawable/postaradd"
            <TextView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:textAlignment="center"
+               android:layout_margin="10dp"
                android:text="Animais que você está ajudando!"
                android:layout_marginLeft="5sp"
                android:textColor="#0F6EA7"
                android:fontFamily="@font/comfortaa"
                />
            <View
-               android:layout_width="match_parent"
-               android:layout_height="4dp"
-               android:background="@drawable/retangle"/>
+               android:layout_width="310dp"
+               android:layout_height="1dp"
+               android:layout_marginLeft="8dp"
+               android:layout_margin="15dp"
+               android:layout_marginRight="8dp"
+               android:background="@android:color/darker_gray" />
 
            <androidx.recyclerview.widget.RecyclerView
                android:id="@+id/recyclerview_posts"
-               android:layout_width="match_parent"
+               android:layout_width="wrap_content"
+               android:layout_gravity="center"
                android:layout_height="match_parent"/>
 
        </LinearLayout>
    </ScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabdenuncia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/speaker"
 
+        />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
        android:id="@+id/fab"
         android:layout_width="wrap_content"

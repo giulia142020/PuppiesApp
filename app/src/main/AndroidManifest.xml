@@ -15,9 +15,12 @@
         android:roundIcon="@mipmap/logoround"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".LostActivity" android:screenOrientation="portrait">   </activity>
+        <activity android:name=".ReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".AboutUsActivity" android:screenOrientation="portrait" />
         <activity
             android:name=".SplashScreen"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,19 +28,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ThereProfileActivity" />
+        <activity android:name=".ThereProfileActivity" android:screenOrientation="portrait">   </activity>
         <activity android:name=".ChatActivity" />
-        <activity android:name=".AddPostActivity" />
-        <activity android:name=".DashboardActivity">
+        <activity android:name=".AddPostActivity" android:screenOrientation="portrait" >   </activity>
+        <activity android:name=".DashboardActivity"  android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".Cadastro" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait" >   </activity>
+        <activity android:name=".Cadastro" android:screenOrientation="portrait" >   </activity>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">   </activity>
     </application>
 
 </manifest>

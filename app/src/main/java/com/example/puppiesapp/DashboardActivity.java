@@ -35,7 +35,7 @@ actionBar.setTitle("");
         navigationView.setOnNavigationItemSelectedListener(selectedListener);
 
        // actionBar.setTitle("Perfil");
-        HomeFragment fragment1 = new HomeFragment();
+        PerfilFragment fragment1 = new PerfilFragment();
         FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
         ft1.replace(R.id.content,fragment1,"");
         ft1.commit();
@@ -49,24 +49,31 @@ actionBar.setTitle("");
                  switch (item.getItemId()){
 
 
-                     case R.id.nav_home:
-                        // actionBar.setTitle("Home");
-                         HomeFragment fragment1 = new HomeFragment();
+                     case R.id.nav_perfil:
+
+                         PerfilFragment fragment1 = new PerfilFragment();
                          FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
                          ft1.replace(R.id.content,fragment1,"");
                          ft1.commit();
                          return true;
-                     case R.id.nav_perfil:
-                         //actionBar.setTitle("Perfil");
-                         PerfilFragment fragment2 = new PerfilFragment();
+                     case R.id.nav_home:
+
+                         HomeFragment fragment2 = new HomeFragment();
                          FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
                          ft2.replace(R.id.content,fragment2,"");
                          ft2.commit();
                          return true;
 
+                     case R.id.nav_perdidos:
+
+                         LostFragment fragment4 = new LostFragment();
+                         FragmentTransaction ft4 = getSupportFragmentManager().beginTransaction();
+                         ft4.replace(R.id.content,fragment4,"");
+                         ft4.commit();
+                         return true;
 
                      case R.id.nav_chat:
-                         //actionBar.setTitle("Chat");
+
                          ChatFragment fragment3 = new ChatFragment();
                          FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
                          ft3.replace(R.id.content,fragment3,"");
@@ -78,6 +85,7 @@ actionBar.setTitle("");
                  return false;
              }
          };
+
     private  void  checkUserStatus()
     {
         FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -117,6 +125,10 @@ actionBar.setTitle("");
        {
            firebaseAuth.signOut();
            checkUserStatus();
+       }
+       if(id==R.id.action_aboutus){
+           Intent intent = new Intent(this, AboutUsActivity.class);
+           startActivity(intent);
        }
         return super.onOptionsItemSelected(item);
     }

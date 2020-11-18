@@ -136,20 +136,37 @@ voltarbtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 String nome_do_animal = nome_do_animalEt.getText().toString().trim();
                 String raca = racaEt.getText().toString().trim();
+                String tags;
                
                 if(TextUtils.isEmpty(nome_do_animal)){
                     Toast.makeText(AddPostActivity.this, "Enter nome ...", Toast.LENGTH_SHORT).show();
                     return ;
                 }
+                if(!caoRb.isChecked() && !gatoRb.isChecked() ){
+                    Toast.makeText(AddPostActivity.this, "Inserir tipo de animal...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(!femeaRb.isChecked() && !machoRb.isChecked()){
+                    Toast.makeText(AddPostActivity.this, "Inserir sexo do animal...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(!claroRb.isChecked() && !escuroRb.isChecked() && !mesticoRb.isChecked()){
+                    Toast.makeText(AddPostActivity.this, "Inserir cor do pelo do animal...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if(TextUtils.isEmpty(raca)){
                     Toast.makeText(AddPostActivity.this, "Inserir raça ...", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                tags = getPostTags();
+
+
                 if(image_uri==null)
                 {
-                    uploadData(nome_do_animal,raca,"noImage");
+                    uploadData(nome_do_animal,raca, tags,"noImage");
                 }else{
-                    uploadData(nome_do_animal,raca,String.valueOf(image_uri));
+                    uploadData(nome_do_animal,raca, tags, String.valueOf(image_uri));
 
 
                 }
@@ -160,7 +177,9 @@ voltarbtn.setOnClickListener(new View.OnClickListener() {
         });
 
     }
-    private void uploadData(final String nome_do_animal, final String raca, String uri) {
+
+
+    private void uploadData(final String nome_do_animal, final String raca, final String tags,  String uri) {
            pd.setMessage("Publicando animal");
            pd.show();
            final String  timeStamp = String.valueOf(System.currentTimeMillis());
@@ -186,6 +205,7 @@ voltarbtn.setOnClickListener(new View.OnClickListener() {
                            hashMap.put("uRaca",raca);
                            hashMap.put("pImage",downloadUri);
                            hashMap.put("pTime",timeStamp);
+                           hashMap.put("pTags", tags);
 
                            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Posts");
                            ref.child(timeStamp).setValue(hashMap)
@@ -243,6 +263,7 @@ voltarbtn.setOnClickListener(new View.OnClickListener() {
                hashMap.put("pRaca",raca);
                hashMap.put("pImage","noImage");
                hashMap.put("pTime",timeStamp);
+               hashMap.put("pTags", tags);
 
                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Posts");
                ref.child(timeStamp).setValue(hashMap)
@@ -272,6 +293,22 @@ voltarbtn.setOnClickListener(new View.OnClickListener() {
            }
 
     }
+
+    private String getPostTags(){
+        String tags = "";
+
+        if(caoRb.isChecked()) tags += "#cao,";
+        if(gatoRb.isChecked()) tags += "#gato,";
+        if(femeaRb.isChecked()) tags += "#femea,";
+        if(machoRb.isChecked()) tags += "#macho,";
+        if(claroRb.isChecked()) tags += "#claro";
+        if(escuroRb.isChecked()) tags += "#escuro";
+        if(mesticoRb.isChecked()) tags += "#mestico";
+
+        return tags;
+    }
+
+
     private void showImagePickDialog() {
         String[] option = {"Camera","Galeria"};
 
@@ -426,6 +463,7 @@ voltarbtn.setOnClickListener(new View.OnClickListener() {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 
 
 }

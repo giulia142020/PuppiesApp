@@ -2,13 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/nav_perfil"
         android:title="Perfil"
-        android:icon="@drawable/ic_profile_black"/>
+        android:icon="@drawable/perfil"/>
 <item android:id="@+id/nav_home"
-    android:title="Home"
-    android:icon="@drawable/ic_home"/>
+    android:title="Adotar"
+    android:icon="@drawable/para_adota"/>
+
+    <item android:id="@+id/nav_perdidos"
+        android:title="Perdidos"
+        android:icon="@drawable/lostspets"/>
 
     <item android:id="@+id/nav_chat"
         android:title="Chats"
-        android:icon="@drawable/ic_chat_black"
+        android:icon="@drawable/chat"
+
         />
 </menu>

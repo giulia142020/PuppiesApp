@@ -46,7 +46,7 @@ public class ChatActivity extends AppCompatActivity {
     ImageView profileIv;
     TextView nameTv, userStatusTv;
     EditText messageEt;
-    ImageButton sendBtn;
+    ImageButton sendBtn,voltarBtn;
 
     FirebaseAuth firebaseAuth;
 
@@ -79,11 +79,18 @@ public class ChatActivity extends AppCompatActivity {
         userStatusTv = findViewById(R.id.userStatusTv);
         messageEt = findViewById(R.id.messageEt);
         sendBtn = findViewById(R.id.sendBtn);
-
+        voltarBtn = findViewById(R.id.btn_voltar);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
+        voltarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChatActivity.this, DashboardActivity.class));
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
         hisUid = intent.getStringExtra("hisUid");

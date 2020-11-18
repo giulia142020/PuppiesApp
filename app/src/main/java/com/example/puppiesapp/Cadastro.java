@@ -31,7 +31,7 @@ public class Cadastro extends AppCompatActivity {
     Button mbtn_Cadastrar;
 
     ProgressDialog progressDialog;
-    private DatabaseReference mDatabase;
+      private DatabaseReference mDatabase;
 
 
     private FirebaseAuth mAuth;
