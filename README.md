@@ -46,14 +46,14 @@ O app Puppies é voltado a adoção de animais online, por meio de uma plataform
 
 Você pode baixar o apk clicando no link abaixo 👇
 
-[Download - Puppies](<COLOQUE O LINK PARA BAIXAR AQUI/>)
+[Download - Puppies](https://drive.google.com/file/d/1gCR4Es3eQp3ugV7hPr6Ms4PhccTVY4fM/view?usp=sharing)
 
 Antes de começar, note que apesar de ser possível instalar aplicativos de fontes não oficiais no Android, é recomendável instalar somente aplicativos APK de “fontes confiáveis”, para evitar os aplicativos maliciosos.
 
 1. Para começar, você precisa liberar a instalação de aplicativos de “fontes desconhecidas” no Android. Para isso, em seu dispositivo Android, abra Configurar > Segurança e marque a opção Fontes desconhecidas.
 Essa opção está disponível no Android 4.0 ou superior. Se você tem uma versão anterior do Android, você deve acessar “Configurações > Aplicativos”, selecionar a opção “Fontes Desconhecidas” e tocar em OK.
 
-2. Acesse o site que oferece o download do aplicativo em formato APK diretamente do navegador Chrome em seu smartphone e faça o download do “arquivo APK” do aplicativo que pretende instalar no smartphone. Acesse o link > [Download - Puppies](<COLOQUE O LINK PARA BAIXAR AQUI/>)
+2. Acesse o site que oferece o download do aplicativo em formato APK diretamente do navegador Chrome em seu smartphone e faça o download do “arquivo APK” do aplicativo que pretende instalar no smartphone. Acesse o link > [Download - Puppies](https://drive.google.com/file/d/1gCR4Es3eQp3ugV7hPr6Ms4PhccTVY4fM/view?usp=sharing)
 
 3. Em alguns casos, o Chrome pode exibir uma mensagem informando que o arquivo pode danificar o seu dispositivo e se você quer manter o arquivo APK mesmo assim. Toque em “OK” para autorizar o download.
 
