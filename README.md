@@ -1,5 +1,5 @@
 # PuppiesApp
-Giulia Araújo
+
 ![Logo](https://github.com/giulia142020/PuppiesApp/blob/master/app/src/main/res/drawable/logo_puppies.gif)
 
 
